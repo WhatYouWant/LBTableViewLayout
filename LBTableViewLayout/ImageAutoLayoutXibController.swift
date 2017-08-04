@@ -1,16 +1,16 @@
 //
-//  ImageAutoLayoutController.swift
+//  ImageAutoLayoutXibController.swift
 //  LBTableViewLayout
 //
-//  Created by ZhanyaaLi on 2017/8/2.
+//  Created by ZhanyaaLi on 2017/8/4.
 //  Copyright © 2017年 Hangzhou Zhanya Technology. All rights reserved.
 //
 
 import UIKit
 
-fileprivate let kCellIdentifier = "Cell"
+fileprivate let kCellIdentifier = "xibCell"
 
-class ImageAutoLayoutController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ImageAutoLayoutXibController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var contentArray: [String] = {
         let content1 = "雨后有车驶来 驶过暮色苍白 旧铁皮向南开 恋人已不在 收听浓烟下的诗歌电台 不动情的咳嗽 至少看起来 归途也还可爱 琴弦少了姿态 再不见那夜里 听歌的小孩"
@@ -33,13 +33,13 @@ class ImageAutoLayoutController: UIViewController, UITableViewDelegate, UITableV
     }()
     
     private var imageArray: [String] = {
-       let image1 = "song1.jpeg"
-       let image2 = "song3.jpeg"
-       let image3 = "song2.jpeg"
-       let image4 = "song5.jpeg"
-       let image5 = "song4.jpeg"
+        let image1 = "song1.jpeg"
+        let image2 = "song3.jpeg"
+        let image3 = "song2.jpeg"
+        let image4 = "song5.jpeg"
+        let image5 = "song4.jpeg"
         
-       return [image1, image2, image3, image4, image5]
+        return [image1, image2, image3, image4, image5]
     }()
     
     private var indexArray: [Int] = {
@@ -51,23 +51,23 @@ class ImageAutoLayoutController: UIViewController, UITableViewDelegate, UITableV
         return tempArray
     }()
     
-    lazy var tableView: UITableView = { [unowned self] in
-       let tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight), style: .plain)
-        tableView.register(LayoutCell.self, forCellReuseIdentifier: kCellIdentifier)
-        self.modelCell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier) as! LayoutCell
+    private lazy var tableView: UITableView = { [unowned self] in
+        let tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight), style: .plain)
+        tableView.register(UINib.init(nibName: "LayoutXibCell", bundle: nil), forCellReuseIdentifier: kCellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
-    }()
+        }()
     
-    var modelCell : LayoutCell!
+    var modelCell : LayoutXibCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(tableView)
+        //        self.modelCell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier) as! LayoutCell
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -75,9 +75,9 @@ class ImageAutoLayoutController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : LayoutCell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier) as! LayoutCell
+        let cell : LayoutXibCell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier) as! LayoutXibCell
         let contentIndex : Int = indexArray[indexPath.row]
-//        cell.imageStr = imageArray[contentIndex]
+        //        cell.imageStr = imageArray[contentIndex]
         cell.name = titleArray[contentIndex]
         cell.content = contentArray[contentIndex]
         return cell
@@ -89,23 +89,19 @@ class ImageAutoLayoutController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         /*
-        if nil == modelCell {
-            modelCell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier) as! LayoutCell
-//            modelCell = LayoutCell.init(style: .default, reuseIdentifier: kCellIdentifier)
-//            view.addSubview(modelCell)
-        }
-        let contentIndex : Int = indexArray[indexPath.row]
-//        modelCell.imageStr = imageArray[contentIndex]
-        modelCell.name = titleArray[contentIndex]
-        modelCell.content = contentArray[contentIndex]
-        modelCell.contentView.layoutSubviews()
-        modelCell.contentView.setNeedsLayout()
-        print("---heightForRowAt:\(modelCell.cellHeight)---")
-//        return modelCell.cellHeight
- */
+         if nil == modelCell {
+            modelCell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier) as! LayoutXibCell
+         }
+         let contentIndex : Int = indexArray[indexPath.row]
+         modelCell.name = titleArray[contentIndex]
+         modelCell.content = contentArray[contentIndex]
+         modelCell.contentView.layoutSubviews()
+         modelCell.contentView.setNeedsLayout()
+         print("---heightForRowAt:\(modelCell.cellHeight)---")
+                 return modelCell.cellHeight
+        */
         return 130
     }
     
-
+    
 }
-

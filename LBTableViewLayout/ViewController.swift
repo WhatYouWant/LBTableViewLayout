@@ -20,7 +20,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func demo01Action(_ sender: UIButton) {
+        pushController(to: ImageAutoLayoutController())
+    }
     
+    @IBAction func demoXibAction(_ sender: UIButton) {
+        pushController(to: ImageAutoLayoutXibController())
+    }
+    
+    @IBAction func demoOCAction(_ sender: UIButton) {
+        pushController(to: OCXibAutoLayoutController())
+    }
+    
+    func pushController(to controller: UIViewController) {
+        navigationController?.pushViewController(controller, animated: true)
+    }
 
 }
 
