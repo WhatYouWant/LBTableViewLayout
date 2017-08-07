@@ -12,28 +12,20 @@ class LayoutCell: UITableViewCell {
     
     var cellHeight: CGFloat = 100
     
-    var content: String?{
+    var model: SWModel? {
         didSet {
-            print("---didSet content---")
-            contentLabel.text = content
+            contentLabel.text = model?.content
+            nameLabel.text = model?.name
+            iconImageView.image = UIImage.init(named: (model?.imageName)!)
+            
+            print("---before timeLabel.frame:\(timeLabel.frame)---")
+            layoutIfNeeded()
+            setNeedsLayout()
+            print("---after timeLabel.frame:\(timeLabel.frame)---")
+            cellHeight = timeLabel.frame.origin.y + timeLabel.frame.size.height
+            self.prepareForReuse()
         }
     }
-    
-    var name: String? {
-        didSet {
-            print("***didSet name***")
-            nameLabel.text = name
-        }
-    }
-    
-    var imageStr: String? {
-        didSet {
-            print("===didSet image===")
-            imageView?.image = UIImage.init(named: imageStr!)
-        }
-    }
-    
-    
     
     private lazy var iconImageView : UIImageView = {
         let imageView : UIImageView = UIImageView()
@@ -81,22 +73,17 @@ class LayoutCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         print("---awakeFromNib---")
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-//        cellHeight = max(iconImageView.frame.origin.y + iconImageView.frame.size.height, timeLabel.frame.origin.y + timeLabel.frame.size.height)
-        print("---LayoutCell layoutSubviews&imageViewFrame:\(iconImageView.frame)---")
+        print("---layoutSubviews timeLabel.frame:\(timeLabel.frame)---")
     }
-    
     
     private func setupSubviews() {
         print("---setupSubviews---")
@@ -131,6 +118,10 @@ class LayoutCell: UITableViewCell {
             make.width.lessThanOrEqualTo(150);
             make.height.equalTo(16);
         }
-        
+//        print("---before iconImageView.frame:\(iconImageView.frame)---")
+//        layoutIfNeeded()
+//        setNeedsLayout()
+//        print("---after iconImageView.frame:\(iconImageView.frame)---")
+//        cellHeight = timeLabel.frame.origin.y + timeLabel.frame.size.height        
     }
 }

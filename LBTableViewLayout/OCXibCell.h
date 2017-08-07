@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class OCXibModel;
+
 @interface OCXibCell : UITableViewCell
+
+@property (nonatomic, strong) OCXibModel *model;
 
 @end

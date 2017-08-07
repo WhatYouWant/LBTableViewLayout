@@ -7,6 +7,16 @@
 //
 
 #import "OCXibCell.h"
+#import "OCXibModel.h"
+
+@interface OCXibCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *userImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@end
 
 @implementation OCXibCell
 
@@ -20,5 +30,14 @@
 
     // Configure the view for the selected state
 }
+
+- (void)setModel:(OCXibModel *)model {
+    _model = model;
+//    [NSThread sleepForTimeInterval:0.05];
+    self.userImageView.image = [UIImage imageNamed:model.imageName];
+    self.nameLabel.text = model.name;
+    self.contentLabel.text = model.content;
+}
+
 
 @end

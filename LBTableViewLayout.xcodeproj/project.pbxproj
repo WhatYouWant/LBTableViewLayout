@@ -83,6 +83,8 @@
 		AED3B7D61F34717E005A4165 /* OCXibCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED3B7D41F34717E005A4165 /* OCXibCell.m */; };
 		AED3B7D71F34717E005A4165 /* OCXibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED3B7D51F34717E005A4165 /* OCXibCell.xib */; };
 		AED3B7D91F349816005A4165 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3B7D81F349816005A4165 /* DataManager.swift */; };
+		AEEB2BEB1F38064400674034 /* OCXibModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEB2BEA1F38064400674034 /* OCXibModel.m */; };
+		AEEE42671F384A73004EB264 /* SWModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE42661F384A73004EB264 /* SWModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +191,9 @@
 		AED3B7D41F34717E005A4165 /* OCXibCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCXibCell.m; sourceTree = "<group>"; };
 		AED3B7D51F34717E005A4165 /* OCXibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OCXibCell.xib; sourceTree = "<group>"; };
 		AED3B7D81F349816005A4165 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		AEEB2BE91F38064400674034 /* OCXibModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCXibModel.h; sourceTree = "<group>"; };
+		AEEB2BEA1F38064400674034 /* OCXibModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCXibModel.m; sourceTree = "<group>"; };
+		AEEE42661F384A73004EB264 /* SWModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWModel.swift; sourceTree = "<group>"; };
 		BC2736B82537423FE0400AED /* Pods-LBTableViewLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBTableViewLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBTableViewLayout/Pods-LBTableViewLayout.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,9 +262,12 @@
 				AE31905A1F31B65A0086122F /* ViewController.swift */,
 				AE3190951F31B79D0086122F /* ImageAutoLayoutController.swift */,
 				AED3B7C71F344458005A4165 /* ImageAutoLayoutXibController.swift */,
+				AEEE42661F384A73004EB264 /* SWModel.swift */,
 				AED3B7D81F349816005A4165 /* DataManager.swift */,
 				AED3B7D01F346E39005A4165 /* OCXibAutoLayoutController.h */,
 				AED3B7D11F346E39005A4165 /* OCXibAutoLayoutController.m */,
+				AEEB2BE91F38064400674034 /* OCXibModel.h */,
+				AEEB2BEA1F38064400674034 /* OCXibModel.m */,
 				AED3B7D31F34717E005A4165 /* OCXibCell.h */,
 				AED3B7D41F34717E005A4165 /* OCXibCell.m */,
 				AED3B7D51F34717E005A4165 /* OCXibCell.xib */,
@@ -665,7 +673,9 @@
 				AED3B7D61F34717E005A4165 /* OCXibCell.m in Sources */,
 				AED3B7CB1F344478005A4165 /* LayoutXibCell.swift in Sources */,
 				AED3B7D21F346E39005A4165 /* OCXibAutoLayoutController.m in Sources */,
+				AEEB2BEB1F38064400674034 /* OCXibModel.m in Sources */,
 				AEC0A15B1F3327A3003D57E7 /* PhotosContainerView.swift in Sources */,
+				AEEE42671F384A73004EB264 /* SWModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

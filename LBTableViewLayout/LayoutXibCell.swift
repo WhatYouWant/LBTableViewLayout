@@ -13,20 +13,6 @@ class LayoutXibCell: UITableViewCell {
     var cellHeight : CGFloat = 130
     
     
-    var content: String?{
-        didSet {
-            print("---didSet content---")
-            contentLabel.text = content
-        }
-    }
-    
-    var name: String? {
-        didSet {
-            print("***didSet name***")
-            nameLabel.text = name
-        }
-    }
-    
     @IBOutlet weak var iconImageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -35,6 +21,13 @@ class LayoutXibCell: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
     
+    var model: SWModel? {
+        didSet {
+            iconImageView.image = UIImage.init(named: (model?.imageName)!)
+            nameLabel.text = model?.name
+            contentLabel.text = model?.content
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

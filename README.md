@@ -160,11 +160,21 @@
 
 **难道是在返回高度方法调用的时候，将对应的约束条件都存储起来，然后在cellForRow调用的时候再直接使用？**
 
+*使用高度估算，会有效提高heightForRowAt函数中的计算速度*
+```
+self.tableView.estimatedRowHeight = 213;
+self.tableView.rowHeight = UITableViewAutomaticDimension;
+```
 
+###对于tableView的代理方法cellForRowAt与heightForRowAt的调用顺序及次数问题
+####在iOS10系统上，对于每一个cell，会先调用三次heightForRowAt方法，再执行cellForRowAt方法，然后，再调用一次heightForRowAt方法，即共执行4次heightForRowAt方法。
 
+###使用instruments的timer工具测试高度计算方法的时间占有率，使用core animation工具计算fps
 
-
-
+##测试数据记录
+###1个cell：未缓存heightForRow数据 21ms， 缓存数据 22ms
+###5个cell：未缓存数据 64ms， 缓存数据 47ms
+###10个cell: 未缓存数据 85ms，滑动过程中，数据会不断增加。 缓存数据 56，62，72ms，滑动过程中，基本不改变
 
 
 
