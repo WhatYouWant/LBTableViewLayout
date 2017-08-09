@@ -160,11 +160,13 @@
 
 **难道是在返回高度方法调用的时候，将对应的约束条件都存储起来，然后在cellForRow调用的时候再直接使用？**
 
-*使用高度估算，会有效提高heightForRowAt函数中的计算速度*
+##使用高度估算，会有效提高heightForRowAt函数中的计算速度
 ```
 self.tableView.estimatedRowHeight = 213;
-self.tableView.rowHeight = UITableViewAutomaticDimension;
+self.tableView.rowHeight = UITableViewAutomaticDimension; //自己调用代理方法计算高度时，不需要添加这一行代码，iOS8中已经默认设置该值。
 ```
+###（iOS10系统））使用高度估算时，对于每一个cell，heightForRowAt这个代理函数，只会执行一次(应该是在估算高度允许的范围之内，只会执行一次)；不使用高度估算时，这个方法会调用4次，如下所述。
+
 
 ###对于tableView的代理方法cellForRowAt与heightForRowAt的调用顺序及次数问题
 ####在iOS10系统上，对于每一个cell，会先调用三次heightForRowAt方法，再执行cellForRowAt方法，然后，再调用一次heightForRowAt方法，即共执行4次heightForRowAt方法。
@@ -175,6 +177,23 @@ self.tableView.rowHeight = UITableViewAutomaticDimension;
 ###1个cell：未缓存heightForRow数据 21ms， 缓存数据 22ms
 ###5个cell：未缓存数据 64ms， 缓存数据 47ms
 ###10个cell: 未缓存数据 85ms，滑动过程中，数据会不断增加。 缓存数据 56，62，72ms，滑动过程中，基本不改变
+*测试过程中发现，计算高度所消耗的时间中，有很大一部分时间花费在```imageView = image```上面，所以可以在计算高度的时候，禁止掉设置image的方法，以此减少计算时间*
+####测试数据：计算高度一共消耗36ms，其中，setImage消耗21ms; 使用标志位禁止掉setImage后，只消耗16ms（36-21）
+##获取动态高度的方法
+###使用SnapKit等自动布局后，布局并不会立即生效，即获取到frame，所以，可以在cell的setModel中，调用以下代码，获取当前cell中最底部控件的frame，来确定最大y值。
+
+```
+var model: XXModel? {
+	didSet {
+		//设置相应UI
+		layoutIfNeeded() //->此代码调用之后，会调用系统的layoutSubviews方法，对界面进行布局
+		setNeedsLayout()
+		//此处获取某个控件frame
+	}
+}
+```
+
+*在使用templateCell计算高度时，由于cell的默认宽度为320，需要设置cell的bounds，否则，会导致计算出现误差。*
 
 
 

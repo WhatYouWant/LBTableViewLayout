@@ -32,6 +32,18 @@ class ViewController: UIViewController {
         pushController(to: OCXibAutoLayoutController())
     }
     
+    @IBAction func demoImages(_ sender: UIButton) {
+        pushController(to: PureImagesAutoLayoutController())
+    }
+    
+    @IBAction func photoTable(_ sender: UIButton) {
+        pushController(to: PhotosTableViewController())
+    }
+    
+    @IBAction func timelineAction(_ sender: UIButton) {
+        pushController(to: TimelineController())
+    }
+    
     func pushController(to controller: UIViewController) {
         navigationController?.pushViewController(controller, animated: true)
     }

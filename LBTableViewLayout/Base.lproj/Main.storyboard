@@ -13,7 +13,7 @@
         <scene sceneID="RaQ-x7-a8D">
             <objects>
                 <navigationController id="jdN-zk-2HM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="f55-Bn-Vq7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="f55-Bn-Vq7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -34,7 +34,7 @@
                         <viewControllerLayoutGuide type="bottom" id="U5P-Ae-2vJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ApM-P6-mZi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9H-eP-b32">
@@ -59,6 +59,30 @@
                                 <state key="normal" title="DemoOC"/>
                                 <connections>
                                     <action selector="demoOCAction:" destination="DMI-Fi-ikn" eventType="touchUpInside" id="MOd-SY-pFr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvS-Lg-ufY">
+                                <rect key="frame" x="29" y="299" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="DemoImages"/>
+                                <connections>
+                                    <action selector="demoImages:" destination="DMI-Fi-ikn" eventType="touchUpInside" id="wTz-ae-3U6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Au-kp-EAQ">
+                                <rect key="frame" x="163" y="105" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="PhotoTable"/>
+                                <connections>
+                                    <action selector="photoTable:" destination="DMI-Fi-ikn" eventType="touchUpInside" id="bK0-tD-mIw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8C-2u-ydb">
+                                <rect key="frame" x="163" y="177" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Timeline"/>
+                                <connections>
+                                    <action selector="timelineAction:" destination="DMI-Fi-ikn" eventType="touchUpInside" id="Web-EA-6Qn"/>
                                 </connections>
                             </button>
                         </subviews>

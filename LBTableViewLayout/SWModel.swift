@@ -16,7 +16,17 @@ class SWModel {
     
     var content : String = "内容"
     
+    var images: [String] = []
+    
+    
     init(image imageName: String, name: String, content: String) {
+        self.imageName = imageName
+        self.name = name
+        self.content = content
+    }
+    
+    init(image imageName: String, name: String, content: String, images: [String]) {
+        self.images = images
         self.imageName = imageName
         self.name = name
         self.content = content

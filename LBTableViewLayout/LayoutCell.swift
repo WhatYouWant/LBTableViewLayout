@@ -12,18 +12,24 @@ class LayoutCell: UITableViewCell {
     
     var cellHeight: CGFloat = 100
     
+    //判断是否是template cell
+    var templateCell: Bool = false
+    
     var model: SWModel? {
         didSet {
             contentLabel.text = model?.content
             nameLabel.text = model?.name
-            iconImageView.image = UIImage.init(named: (model?.imageName)!)
+            if !templateCell {
+                iconImageView.image = UIImage.init(named: (model?.imageName)!)
+            }
             
             print("---before timeLabel.frame:\(timeLabel.frame)---")
-            layoutIfNeeded()
+            layoutIfNeeded() //此处执行完成之后，会调用系统的layoutSubviews方法
+            print("---layoutIfNeeded---")
             setNeedsLayout()
             print("---after timeLabel.frame:\(timeLabel.frame)---")
             cellHeight = timeLabel.frame.origin.y + timeLabel.frame.size.height
-            self.prepareForReuse()
+            self.prepareForReuse()  //这个地方有没有存在的必要？
         }
     }
     
@@ -118,10 +124,5 @@ class LayoutCell: UITableViewCell {
             make.width.lessThanOrEqualTo(150);
             make.height.equalTo(16);
         }
-//        print("---before iconImageView.frame:\(iconImageView.frame)---")
-//        layoutIfNeeded()
-//        setNeedsLayout()
-//        print("---after iconImageView.frame:\(iconImageView.frame)---")
-//        cellHeight = timeLabel.frame.origin.y + timeLabel.frame.size.height        
     }
 }

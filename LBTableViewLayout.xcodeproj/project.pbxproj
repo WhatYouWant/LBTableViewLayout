@@ -24,6 +24,11 @@
 		AE3190941F31B6DB0086122F /* moto2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = AE3190921F31B6DB0086122F /* moto2.JPG */; };
 		AE3190971F31B79D0086122F /* ImageAutoLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3190951F31B79D0086122F /* ImageAutoLayoutController.swift */; };
 		AE3190981F31B79D0086122F /* ImageAutoLayoutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE3190961F31B79D0086122F /* ImageAutoLayoutController.xib */; };
+		AE3DDAB61F395F9700A14BB2 /* PureImagesAutoLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3DDAB51F395F9700A14BB2 /* PureImagesAutoLayoutController.swift */; };
+		AE3DDAB81F3988C500A14BB2 /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3DDAB71F3988C500A14BB2 /* PhotosTableViewController.swift */; };
+		AE3DDABA1F398BDF00A14BB2 /* PhotosLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3DDAB91F398BDE00A14BB2 /* PhotosLayoutCell.swift */; };
+		AE3DDABC1F39AA6300A14BB2 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3DDABB1F39AA6300A14BB2 /* TimelineCell.swift */; };
+		AE3DDABE1F39C84200A14BB2 /* TimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3DDABD1F39C84200A14BB2 /* TimelineController.swift */; };
 		AEC0A12B1F332653003D57E7 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEC0A0FD1F332653003D57E7 /* 0.jpg */; };
 		AEC0A12C1F332653003D57E7 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEC0A0FE1F332653003D57E7 /* 1.jpg */; };
 		AEC0A12D1F332653003D57E7 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AEC0A0FF1F332653003D57E7 /* 10.jpg */; };
@@ -129,6 +134,11 @@
 		AE3190921F31B6DB0086122F /* moto2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = moto2.JPG; sourceTree = "<group>"; };
 		AE3190951F31B79D0086122F /* ImageAutoLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAutoLayoutController.swift; sourceTree = "<group>"; };
 		AE3190961F31B79D0086122F /* ImageAutoLayoutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageAutoLayoutController.xib; sourceTree = "<group>"; };
+		AE3DDAB51F395F9700A14BB2 /* PureImagesAutoLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PureImagesAutoLayoutController.swift; sourceTree = "<group>"; };
+		AE3DDAB71F3988C500A14BB2 /* PhotosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
+		AE3DDAB91F398BDE00A14BB2 /* PhotosLayoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosLayoutCell.swift; sourceTree = "<group>"; };
+		AE3DDABB1F39AA6300A14BB2 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		AE3DDABD1F39C84200A14BB2 /* TimelineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineController.swift; sourceTree = "<group>"; };
 		AEC0A0FD1F332653003D57E7 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		AEC0A0FE1F332653003D57E7 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		AEC0A0FF1F332653003D57E7 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
@@ -261,7 +271,11 @@
 				AE3190581F31B65A0086122F /* AppDelegate.swift */,
 				AE31905A1F31B65A0086122F /* ViewController.swift */,
 				AE3190951F31B79D0086122F /* ImageAutoLayoutController.swift */,
+				AE3190961F31B79D0086122F /* ImageAutoLayoutController.xib */,
 				AED3B7C71F344458005A4165 /* ImageAutoLayoutXibController.swift */,
+				AE3DDAB51F395F9700A14BB2 /* PureImagesAutoLayoutController.swift */,
+				AE3DDAB71F3988C500A14BB2 /* PhotosTableViewController.swift */,
+				AE3DDABD1F39C84200A14BB2 /* TimelineController.swift */,
 				AEEE42661F384A73004EB264 /* SWModel.swift */,
 				AED3B7D81F349816005A4165 /* DataManager.swift */,
 				AED3B7D01F346E39005A4165 /* OCXibAutoLayoutController.h */,
@@ -275,7 +289,8 @@
 				AED3B7BA1F3403D1005A4165 /* LayoutCell.swift */,
 				AED3B7C91F344478005A4165 /* LayoutXibCell.swift */,
 				AED3B7CA1F344478005A4165 /* LayoutXibCell.xib */,
-				AE3190961F31B79D0086122F /* ImageAutoLayoutController.xib */,
+				AE3DDAB91F398BDE00A14BB2 /* PhotosLayoutCell.swift */,
+				AE3DDABB1F39AA6300A14BB2 /* TimelineCell.swift */,
 				AE31905C1F31B65A0086122F /* Main.storyboard */,
 				AE31905F1F31B65A0086122F /* Assets.xcassets */,
 				AE3190611F31B65A0086122F /* LaunchScreen.storyboard */,
@@ -664,13 +679,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3DDAB61F395F9700A14BB2 /* PureImagesAutoLayoutController.swift in Sources */,
 				AE31905B1F31B65A0086122F /* ViewController.swift in Sources */,
 				AED3B7D91F349816005A4165 /* DataManager.swift in Sources */,
 				AE3190591F31B65A0086122F /* AppDelegate.swift in Sources */,
+				AE3DDABE1F39C84200A14BB2 /* TimelineController.swift in Sources */,
+				AE3DDABC1F39AA6300A14BB2 /* TimelineCell.swift in Sources */,
 				AE3190971F31B79D0086122F /* ImageAutoLayoutController.swift in Sources */,
 				AED3B7BB1F3403D1005A4165 /* LayoutCell.swift in Sources */,
+				AE3DDAB81F3988C500A14BB2 /* PhotosTableViewController.swift in Sources */,
 				AED3B7C81F344458005A4165 /* ImageAutoLayoutXibController.swift in Sources */,
 				AED3B7D61F34717E005A4165 /* OCXibCell.m in Sources */,
+				AE3DDABA1F398BDF00A14BB2 /* PhotosLayoutCell.swift in Sources */,
 				AED3B7CB1F344478005A4165 /* LayoutXibCell.swift in Sources */,
 				AED3B7D21F346E39005A4165 /* OCXibAutoLayoutController.m in Sources */,
 				AEEB2BEB1F38064400674034 /* OCXibModel.m in Sources */,
